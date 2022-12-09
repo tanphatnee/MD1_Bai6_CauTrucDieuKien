@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table border="1" style="width: 500px">
+  <tr>
+    <td colspan="4"><input style="width: 500px" id="Calculator" type="text"></td>
+  </tr>
+  <tr>
+    <td><button onclick="inputCalculator()">1</button></td>
+    <td><button onclick="inputCalculator('2')">2</button></td>
+    <td><button onclick="inputCalculator('3')">3</button></td>
+    <td><button onclick="inputCalculator('+')">+</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="inputCalculator('4')">4</button></td>
+    <td><button onclick="inputCalculator('5')">5</button></td>
+    <td><button onclick="inputCalculator('6')">6</button></td>
+    <td><button onclick="inputCalculator('-')">-</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="inputCalculator('7')">7</button></td>
+    <td><button onclick="inputCalculator('8')">8</button></td>
+    <td><button onclick="inputCalculator('9')">9</button></td>
+    <td><button onclick="inputCalculator('*')">x</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="clearCalculator()">C</button></td>
+    <td><button onclick="inputCalculator('0')">0</button></td>
+    <td><button onclick="result()">=</button></td>
+    <td><button onclick="inputCalculator('/')">/</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="binhPhuong()"><p>X <sup>2</sup></p></button></td>
+    <td><button onclick="sin()">sin</button></td>
+  </tr>
+</table>
+<script>
+  function inputCalculator(input){
+    document.getElementById('Calculator').value += input;
+  }
+  function clearCalculator() {
+    document.getElementById('Calculator').value = '';
+  }
+  function result(){
+    let input = document.getElementById('Calculator').value;
+    let result = eval(input);
+    document.getElementById('Calculator').value = result;
+  }
+  function binhPhuong() {
+    let input = document.getElementById('Calculator').value;
+    let result = Math.pow(input, 2);
+    document.getElementById('Calculator').value = result;
+  }
+  function sin(){
+    let input = document.getElementById('Calculator').value;
+    let result = Math.sin(input*Math.PI/180);
+    document.getElementById('Calculator').value = result;
+  }
+
+
+</script>
+</body>
+</html>

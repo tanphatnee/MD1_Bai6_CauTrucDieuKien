@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let soBai = +prompt('Nhập tổng số bài kiểm tra.');
+  let tong =0;
+  for (let i = 1; i <= soBai ; i++) {
+    let diemKiemTra = +prompt('Điểm bài kiểm tra thứ' +i);
+    tong += diemKiemTra;
+  }
+  let diemGiuaKi = +prompt('Nhập điểm giữa kì.');
+  let diemCuoiKi = +prompt('Nhập điểm cuối kì.');
+  tong = tong + diemGiuaKi + diemCuoiKi
+  let diemTrungBinh = tong/(soBai+2)
+  if (diemTrungBinh<5){
+    document.write('Học lực yếu.')
+  }else if(diemTrungBinh<6.5){
+    document.write('Học lực Trung Bình.')
+  }else if(diemTrungBinh<8){
+    document.write('Học lực khá.')
+  }else {
+    document.write('Học lực giỏi.')
+  }
+</script>
+</body>
+</html>

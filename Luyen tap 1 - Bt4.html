@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    img{
+      width: 500px;
+      height: 150px;
+    }
+    #meo{
+      border: 4px solid rgb(215, 45, 173);
+    }
+    #gau{
+      border: 4px solid black;
+    }
+    #khi{
+      border: 4px solid yellow;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <img src="./image/Cat 1.png" id="meo" alt="#" onclick="changeMeo()">
+  <img src="./image/Gau 2.png" id="gau" alt="#" onclick="changeGau()">
+  <img src="./image/Khi 3.png" id="khi" alt="#" onclick="changeKhi()">
+</div>
+
+<script>
+  let meo = document.getElementById("meo")
+  let gau = document.getElementById("gau")
+  let khi = document.getElementById("khi")
+  let container = document.getElementById("container")
+  console.log(meo, gau, khi);
+  let countImg1 = 0;
+  let countImg2 = 1;
+  let countImg3 = 2;
+
+  function changeMeo(){
+    countImg1++
+    if(countImg1 == 1){
+      meo.src = "./image/Gau 1.png";
+    }else if(countImg1==2){
+      meo.src = "./image/Khi 1.png";
+    }else{
+      countImg1=0
+      meo.src= "./image/Cat 1.png"
+    }
+    checkTrue()
+  }
+  function changeGau(){
+    countImg2++
+    if(countImg2 == 1){
+      gau.src = "./image/Gau 2.png";
+    }else if(countImg2==2){
+      gau.src = "./image/Khi 2.png";
+    }else{
+      countImg2=0
+      gau.src= "./image/Cat 2.png"
+    }
+    checkTrue()
+  }
+  function changeKhi(){
+    countImg3++
+    if(countImg3 == 1){
+      khi.src = "./image/Gau 3.png";
+    }else if(countImg3==2){
+      khi.src = "./image/Khi 3.png";
+    }else{
+      countImg3=0
+      khi.src= "./image/Cat 3.png"
+    }
+    checkTrue()
+  }
+  function checkTrue(){
+    if(countImg1==countImg2&&countImg2==countImg3){
+      container.style.border = "4px solid red";
+      meo.style.borderColor= "red"
+      gau.style.borderColor= "red"
+      khi.style.borderColor= "red"
+    }else{
+      container.style.border ="none"
+    }
+  }
+
+</script>
+</body>
+</html>

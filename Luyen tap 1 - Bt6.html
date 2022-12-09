@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input[type="range"]{
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+<label><input type="range" min="0" max="1" id="good" value="0" onclick="changeStateGood()">good</label> <br>
+<label><input type="range" min="0" max="1" id="fast" value="0"  onclick="changeStateFast()">fast</label><br>
+<label><input type="range" min="0" max="1" id="cheap" value="0"  onclick="changeStateCheap()">cheap</label>
+<script>
+  let good = document.getElementById("good")
+  let fast = document.getElementById("fast")
+  let cheap = document.getElementById("cheap")
+  let isGood = false
+  let isFast = false
+  let isCheap = false
+  // nó có giá trị - > true
+  function changeStateGood (){
+    isGood = !isGood
+    if (isGood){
+      good.value = 1
+      if(isCheap && isFast){
+        cheap.value = 0
+      }
+    }
+    else{
+      good.value = 0
+    }
+
+  }function changeStateFast (){
+
+    isFast = !isFast
+
+    if (isFast){
+      fast.value = 1
+      if (isGood && isCheap){
+        cheap.value = 0
+      }
+    }
+    else{
+      fast.value = 0
+    }
+  }function changeStateCheap (){
+    isCheap = !isCheap
+    if (isCheap){
+      cheap.value = 1
+      if(isCheap && isFast){
+        good.value = 0
+      }
+    }
+    else{
+      cheap.value = 0
+    }
+  }
+</script>
+</body>
+</html>
